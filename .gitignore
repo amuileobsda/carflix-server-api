@@ -1,4 +1,6 @@
 
 /website/connection.php
 
-/config/*
+/config/*\
+
+*.git

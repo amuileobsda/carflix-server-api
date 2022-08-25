@@ -21,7 +21,7 @@
     $member->mb_email = $data->mb_email;
     $member->mb_phone = $data->mb_phone;
     $member->mb_nickname = $data->mb_nickname;
-    $member->mb_image = $data->mb_image;
+    // $member->mb_image = $data->mb_image;
     $member->mb_is_admin = $data->mb_is_admin;
     $member->mb_register_car = $data->mb_register_car;
     $member->mb_lastlogin_datetime = $objDateTime;

@@ -270,7 +270,7 @@ class Member
 	{
 		// echo "잘실행되고있다.";
 		$query = "UPDATE member SET mb_userid= :mb_userid, mb_password= :mb_password, mb_email= :mb_email, mb_phone= :mb_phone, mb_nickname= :mb_nickname, 
-					mb_image= :mb_image, mb_is_admin= :mb_is_admin, mb_register_car= :mb_register_car, mb_lastlogin_datetime= :mb_lastlogin_datetime, mb_regdate= :mb_regdate
+					mb_is_admin= :mb_is_admin, mb_register_car= :mb_register_car, mb_lastlogin_datetime= :mb_lastlogin_datetime, mb_regdate= :mb_regdate
 					WHERE mb_id = :mb_id";
 		$stmt = $this->conn->prepare($query);
 		
@@ -279,7 +279,7 @@ class Member
 		$this->mb_email = htmlspecialchars(strip_tags( $this->mb_email));
 		$this->mb_phone = htmlspecialchars(strip_tags( $this->mb_phone));
 		$this->mb_nickname = htmlspecialchars(strip_tags( $this->mb_nickname));
-		$this->mb_image = htmlspecialchars(strip_tags( $this->mb_image));
+		// $this->mb_image = htmlspecialchars(strip_tags( $this->mb_image));
 		$this->mb_is_admin = htmlspecialchars(strip_tags( $this->mb_is_admin));
 		$this->mb_register_car = htmlspecialchars(strip_tags( $this->mb_register_car));
 		$this->mb_lastlogin_datetime = htmlspecialchars(strip_tags( $this->mb_lastlogin_datetime));
@@ -291,7 +291,7 @@ class Member
 		$stmt->bindParam(':mb_email', $this->mb_email);
 		$stmt->bindParam(':mb_phone', $this->mb_phone);
 		$stmt->bindParam(':mb_nickname', $this->mb_nickname);
-		$stmt->bindParam(':mb_image', $this->mb_image);
+		// $stmt->bindParam(':mb_image', $this->mb_image);
 		$stmt->bindParam(':mb_is_admin', $this->mb_is_admin);
 		$stmt->bindParam(':mb_register_car', $this->mb_register_car);
 		$stmt->bindParam(':mb_lastlogin_datetime', $this->mb_lastlogin_datetime);
