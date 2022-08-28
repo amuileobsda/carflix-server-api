@@ -467,6 +467,85 @@ function rent_group_name($con, $rg_id, $status)
 		return $result_output;
 	}
 }
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+// 2022-08-28 회원정보에 대한 차량 기록 로그////////////////////////////////////////////////
+function rent_car_id($con, $rg_id, $status, $mb_id)
+{
+	// $query = "select cr_id, cr_number_classification, cr_registeration_number, cr_carname, cr_mac_address from car_registeration where group_id = '$rg_id' AND status = '$status'";
+	$query = "select cr_id, cr_number_classification, cr_registeration_number, cr_carname from car_registeration where group_id = '$rg_id' AND status = '$status'";
+	
+	$result = mysqli_query($con, $query);
+	$result_array = array();
+	$result_array['data'] = array();
+
+	while ($row = mysqli_fetch_assoc($result))
+	{
+		extract($row);
+        $item = array(
+				'cr_id' => $cr_id,
+				'cr_number_classification' => $cr_number_classification,
+				'cr_registeration_number' => $cr_registeration_number,
+				'cr_carname' => $cr_carname,
+		);
+		array_push($result_array['data'], $item);
+	 }
+	
+	 return $result_array;
+}
+
+function ceo_car_id($con, $cg_id, $status, $mb_id)
+{
+	// $query = "select cr_id, cr_number_classification, cr_registeration_number, cr_carname, cr_mac_address from car_registeration where group_id = '$rg_id' AND status = '$status'";
+	$query = "select cr_id, cr_number_classification, cr_registeration_number, cr_carname from car_registeration where group_id = '$cg_id' AND status = '$status'";
+	
+	$result = mysqli_query($con, $query);
+	$result_array = array();
+	$result_array['data'] = array();
+
+	while ($row = mysqli_fetch_assoc($result))
+	{
+		extract($row);
+        $item = array(
+				'cr_id' => $cr_id,
+				'cr_number_classification' => $cr_number_classification,
+				'cr_registeration_number' => $cr_registeration_number,
+				'cr_carname' => $cr_carname,
+		);
+		array_push($result_array['data'], $item);
+	 }
+	
+	 return $result_array;
+}
+
+function small_car_id($con, $sg_id, $status, $mb_id)
+{
+	// $query = "select cr_id, cr_number_classification, cr_registeration_number, cr_carname, cr_mac_address from car_registeration where group_id = '$rg_id' AND status = '$status'";
+	$query = "select cr_id, cr_number_classification, cr_registeration_number, cr_carname from car_registeration where group_id = '$sg_id' AND status = '$status'";
+	
+	$result = mysqli_query($con, $query);
+	$result_array = array();
+	$result_array['data'] = array();
+
+	while ($row = mysqli_fetch_assoc($result))
+	{
+		extract($row);
+        $item = array(
+				'cr_id' => $cr_id,
+				'cr_number_classification' => $cr_number_classification,
+				'cr_registeration_number' => $cr_registeration_number,
+				'cr_carname' => $cr_carname,
+		);
+		array_push($result_array['data'], $item);
+	 }
+	
+	 return $result_array;
+}
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
 
 //차량에 대한 로그정보 가져오기
 //탄사람이 당연히 있어야겠지?
@@ -501,9 +580,31 @@ function car_info_log($con, $cr_id)
 		);
 		array_push($result_array['data'], $item);
 	 }
-	
 	 return $result_array;
+}
 
+//멤버가 그동안 탄 차량에 대한 정보 모두 가져온다.
+function member_car_info_log($con, $cr_id, $mb_id)
+{
+	$query = "select * from vehicle_status where cr_id = '$cr_id' and member = '$mb_id' order by vs_regdate desc";
+
+	$result = mysqli_query($con, $query);
+	
+	$result_array = array();
+	$result_array['data'] = array();
+
+	while ($row = mysqli_fetch_assoc($result))
+	{
+		extract($row);
+        $item = array(
+				'vs_startup_information' => $vs_startup_information,
+				'vs_latitude' => $vs_latitude,
+				'vs_longitude' => $vs_longitude,
+				'vs_regdate' => $vs_regdate
+		);
+		array_push($result_array['data'], $item);
+	 }
+	 return $result_array;
 }
 
 //ceo_group에 걸려있는 멤버 정보가져오기

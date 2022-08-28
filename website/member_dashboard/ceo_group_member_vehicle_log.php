@@ -1,85 +1,65 @@
-  <?php 
-	  session_start();
+<?php 
+	session_start();
 
-	  include("../connection.php");
-	  include("../functions.php");
+	include("../connection.php");
+	include("../functions.php");
 
-	  $user_data = check_login($con);
- 	  // $member_count = check_member_number($con);
- 	  // $ceo_count = check_ceo_number($con);
- 	  // $car_count = check_car_number($con);
+	$user_data = check_login($con);
 
-    $_SESSION['mb_id'] = $user_data['mb_id'];
-    // $group_info = rent_group_info($con);
-
-    //그룹안에서 멤버 클릭시 넘어온 구현
+    //그룹안에서 차량 클릭시 넘어온 구현
+   
+    $cg_id = $_GET['cg_id'];
     $status = $_GET['status'];
-    $rg_id = $_GET['rg_id'];
-    $member_info = rent_member_info($con, $rg_id, $status);
+    $mb_id = $_GET['mb_id'];
 
-    //그룹이름가져오기
-    $group_name = rent_group_name($con, $rg_id, $status);
+    //cg_id로 cr_id가져오기
+    $ceo_cr_id = ceo_car_id($con, $cg_id, $status, $mb_id);
+    
+    $result_array = array();
+    $result_array['data'] = array();
 
-    //버튼 클릭시 바로 서버로 넘기는건 무리가있다 -> ajax쓰자
-    if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['removeAction']))
+    foreach($ceo_cr_id['data'] as $key => $val)
     {
-      $result = member_remove($con, $rg_id, $status, $_POST['removeAction']);
-      echo '<script type="text/JavaScript">'; 
-      echo 'alert("해당 멤버가 그룹에서 추방되었습니다!");';
-      echo '</script>';
-      // if($result == true)
-      // {
-      //   echo '<script type="text/JavaScript">'; 
-      //   echo 'alert("해당 멤버가 그룹에서 추방되었습니다!");';
-      //   echo 'location.reload();';
-      //   echo '</script>';
-      //   return true;
-      // }else
-      // {
-      //   return false;
-      // }
+        // echo $val['cr_id'];
+        $cr_id = $val['cr_id'];
+        $cr_number_classification = $val['cr_number_classification'];
+        $cr_registeration_number = $val['cr_registeration_number'];
+        $cr_carname = $val['cr_carname'];
+
+        //cr_id로 차량 상태에 대한 값 전부 가져오기
+        $item = member_car_info_log($con, $cr_id, $mb_id);
+
+        foreach($item['data'] as $key => $val)
+        {
+            // echo $val['vs_startup_information'];
+            // echo $val['vs_latitude'];
+            // echo $val['vs_longitude'];
+            // echo $val['vs_regdate'];
+
+            $vs_startup_information = $val['vs_startup_information'];
+            $vs_latitude = $val['vs_latitude'];
+            $vs_longitude = $val['vs_longitude'];
+            $vs_regdate = $val['vs_regdate'];
+
+            $item = array(
+                'cr_id' => $cr_id,
+                'cr_number_classification' => $cr_number_classification,
+                'cr_registeration_number' => $cr_registeration_number,
+                'cr_carname' => $cr_carname,
+				'vs_startup_information' => $vs_startup_information,
+				'vs_latitude' => $vs_latitude,
+				'vs_longitude' => $vs_longitude,
+				'vs_regdate' => $vs_regdate
+		    );
+    		array_push($result_array['data'], $item);
+        }
+
+        // array_push($result_array['data'], $item);
     }
 
-    //버튼 클릭시 매니저 권한부여
-    if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['updateManagerAction']))
-    {
-      $result = manager_update($con, $rg_id, $status, $_POST['updateManagerAction']);
-      echo '<script type="text/JavaScript">'; 
-      echo 'alert("부매니저 권한이 부여되었습니다.");';
-      echo '</script>';
-      // if($result == true)
-      // {
-      //   echo '<script type="text/JavaScript">'; 
-      //   echo 'alert("매니저 권한이 부여되었습니다.");';
-      //   echo 'location.reload();';
-      //   echo '</script>';
-      //   return true;
-      // }else
-      // {
-      //   return false;
-      // }
-    }
 
-    //버튼 클릭시 일반회원 권한부여
-    if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['updateMemberAction']))
-    {
-      $result = member_update($con, $rg_id, $status, $_POST['updateMemberAction']);
-      echo '<script type="text/JavaScript">'; 
-      echo 'alert("일반사용자 권한이 부여되었습니다.");';
-      echo '</script>';
-      // if($result == true)
-      // {
-      //   echo '<script type="text/JavaScript">'; 
-      //   echo 'alert("일반회원 권한이 부여되었습니다.");';
-      //   echo 'location.reload();';
-      //   echo '</script>';
-      //   return true;
-      // }else
-      // {
-      //   return false;
-      // }
-
-    }
+    //회원정보에 대한 차량 기록 로그
+    // $member_car_info_log = member_car_info_log($con, $cr_id, $mb_id);
 
 
 ?>
@@ -190,7 +170,7 @@
 
           </div>
           <!--Table-->
-          <div class="p-4 font-bold text-gray-600"><?php echo $group_name['rg_title'] ?> 그룹 회원들</div>
+          <div class="p-4 font-bold text-gray-600"><?php echo $user_data['mb_userid']; ?>님이 이용한 차량로그
           <div class="grid  lg:grid-cols-1  md:grid-cols-1 p-4 gap-3">
             <div class="col-span-2 flex flex-auto items-center justify-between  p-5 bg-white rounded shadow-sm">
               <table class="min-w-full divide-y divide-gray-200 table-auto">
@@ -202,7 +182,7 @@
                     </th>
                     <th scope="col"
                       class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
-                      회원 아이디
+                      차량 상태
                     </th>
                     <!-- <th scope="col"
                       class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -210,30 +190,34 @@
                     </th> -->
                     <th scope="col"
                       class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
-                      유저 닉네임
+                      차량이름
                     </th>
                     <th scope="col"
                       class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
-                      차량로그
+                      차량구분/차량등록번호
                     </th>
                     <th scope="col"
                       class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
-                      마지막로그인시간
+                      위도
                     </th>
                     <th scope="col"
                       class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
-                      회원가입시간
+                      경도
                     </th>
-                    <th scope="col" class="relative px-6 py-3">
+                    <th scope="col"
+                      class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
+                      로그기록시간
+                    </th>
+                    <!-- <th scope="col" class="relative px-6 py-3">
                       <span class="sr-only">Edit</span>
-                    </th>
+                    </th> -->
                   </tr>
                 </thead>
                 <tbody class="bg-white divide-y divide-gray-200">
                 <?php
                   $count=0;
                   // for($i=0; $i<count($member_info); $i++){
-                  foreach($member_info['data'] as $key => $val){
+                  foreach($result_array['data'] as $key => $val){
                   $count++;
                 ?>
                   <tr>
@@ -243,57 +227,48 @@
                         </div>
                     </td>
 
+    
                     <td class="px-6 py-4 whitespace-nowrap">
-                      <div class="flex items-center">
-                        
-                        <!-- <div class="flex-shrink-0 h-10 w-10">
-                          <img class="h-10 w-10 rounded-full"
-                            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
-                            alt="">
-                        </div> -->
-                        <div class="ml-4">
-                          <div class="text-sm font-medium text-gray-900">
-                          <?= $val['mb_userid']?>
-                          </div>
-                          <div class="text-sm text-gray-500">
-                          <?= $val['mb_email']?>
-                          </div>
-                          <div class="text-sm text-gray-500">
-                          <?= $val['mb_phone']?>
-                          </div>
-                        </div>
-                      </div>
+                      <span
+                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                         <?= $val['vs_startup_information']?>
+                      </span>
+                    </td>
+
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <span
+                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full text-green-800">
+                         <?= $val['cr_carname']?>
+                      </span>
+                    </td>
+
+                    <td class="pl-10 py-4 whitespace-nowrap text-left">
+                      <span
+                        class="px-1 inline-flex text-xs leading-5 font-semibold rounded-full text-green-800">
+                         <?= $val['cr_number_classification']?> <?= $val['cr_registeration_number']?>
+                      </span>
                     </td>
 
                     <td class="px-6 py-4 whitespace-nowrap">
                       <span
                         class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                         <?= $val['mb_nickname']?>
+                         <?= $val['vs_latitude']?>
                       </span>
                     </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-left text-sm text-gray-500 font-medium">
-                        <a href="rent_group_member_vehicle_log.php?rg_id=<?php echo $rg_id;?>&status=<?php echo $status;?>&mb_id=<?php echo $val['mb_id'];?>" class="bg-blue-500 hover:bg-blue-100 text-white font-semibold py-2 px-4 border border-gray-400 rounded shadow">차량로그</a>
-                    </td>
-                   
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      <?= $val['mb_lastlogin_datetime']?>
-                    </td>
 
+                    <td class="px-6 py-4 whitespace-nowrap">
+                      <span
+                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                         <?= $val['vs_longitude']?>
+                      </span>
+                    </td>
+                    
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      <?= $val['mb_regdate']?>
+                      <?= $val['vs_regdate']?>
                     </td>
                 
-                    <form method="post">
-                      <td class="px-6 py-4 whitespace-nowrap text-right text-sm text-gray-500 font-medium">
-                        <div class="text-center pb-2">
-                          <button type="submit" name="removeAction" value="<?= $val['mb_id']?>" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">그룹추방</button>
-                        </div>
-                        <div>
-                          <button type="submit" name="updateManagerAction" value="<?= $val['mb_id']?>" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">부매니저 권한</button>
-                          <button type="submit" name="updateMemberAction" value="<?= $val['mb_id']?>" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">일반사용자 권한</button>
-                        </div>
-                      </td>
-                    </form>
+               
+
                   </tr>
 
                   <?php 

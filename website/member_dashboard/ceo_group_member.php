@@ -23,18 +23,20 @@
     //버튼 클릭시 바로 서버로 넘기는건 무리가있다 -> ajax쓰자
     if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['removeAction']))
     {
-
       $result = member_remove($con, $cg_id, $status, $_POST['removeAction']);
-      if($result == true)
-      {
-        echo '<script type="text/JavaScript">'; 
-        echo 'alert("해당 멤버가 그룹에서 추방되었습니다!");';
-        echo 'location.reload();';
-        echo '</script>';
-      }else
-      {
-        return false;
-      }
+      echo '<script type="text/JavaScript">'; 
+      echo 'alert("해당 멤버가 그룹에서 추방되었습니다!");';
+      echo '</script>';
+      // if($result == true)
+      // {
+      //   echo '<script type="text/JavaScript">'; 
+      //   echo 'alert("해당 멤버가 그룹에서 추방되었습니다!");';
+      //   echo 'location.reload();';
+      //   echo '</script>';
+      // }else
+      // {
+      //   return false;
+      // }
     }
 
     //버튼 클릭시 매니저 권한부여
@@ -42,7 +44,7 @@
     {
       $result = manager_update($con, $rg_id, $status, $_POST['updateManagerAction']);
       echo '<script type="text/JavaScript">'; 
-      echo 'alert("매니저 권한이 부여되었습니다.");';
+      echo 'alert("부매니저 권한이 부여되었습니다.");';
       echo '</script>';
       // if($result == true)
       // {
@@ -62,7 +64,7 @@
     {
       $result = member_update($con, $rg_id, $status, $_POST['updateMemberAction']);
       echo '<script type="text/JavaScript">'; 
-      echo 'alert("일반회원 권한이 부여되었습니다.");';
+      echo 'alert("일반사용자 권한이 부여되었습니다.");';
       echo '</script>';
       // if($result == true)
       // {
@@ -270,12 +272,7 @@
                     <td class="px-6 py-4 whitespace-nowrap text-left text-sm text-gray-500 font-medium">
                         <a href="#" class="bg-blue-500 hover:bg-blue-100 text-white font-semibold py-2 px-4 border border-gray-400 rounded shadow">차량로그</a>
                     </td>
-                    <!-- <td class="px-6 py-4 whitespace-nowrap">
-                      <span
-                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                         <?= $val['mb_register_car']?>
-                      </span>
-                    </td> -->
+                    
 
                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                       <?= $val['mb_lastlogin_datetime']?>
@@ -287,9 +284,13 @@
                 
                     <form method="post">
                       <td class="px-6 py-4 whitespace-nowrap text-right text-sm text-gray-500 font-medium">
-                      <button type="submit" name="updateManagerAction" value="<?= $val['mb_id']?>" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">매니저권한</button>
-                        <button type="submit" name="updateMemberAction" value="<?= $val['mb_id']?>" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">회원권한</button>
-                        <button type="submit" name="removeAction" value="<?= $val['mb_id']?>" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">그룹추방</button>
+                        <div class="text-center pb-2">
+                          <button type="submit" name="removeAction" value="<?= $val['mb_id']?>" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">그룹추방</button>
+                        </div>
+                        <div>
+                          <button type="submit" name="updateManagerAction" value="<?= $val['mb_id']?>" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">부매니저 권한</button>
+                          <button type="submit" name="updateMemberAction" value="<?= $val['mb_id']?>" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">일반사용자 권한</button>
+                        </div>
                       </td>
                     </form>
 
