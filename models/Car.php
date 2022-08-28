@@ -3,6 +3,7 @@ class Car
 {
     private $conn;
 	private $table = 'car_registeration';
+	private $table_2 = 'vehicle_status';
 
 	//Car properties
 	public $cr_id;
@@ -285,7 +286,48 @@ class Car
 
 	}
 
+	// 2022-08-28 현재 차량이 켜질수있는지 아니면 다른사람이 타고있는지 체크
+	public function vehicle_condition()
+	{
+		$vehicle_condition = 'off';
 
+		$query = "SELECT
+			`vs_startup_information`, `cr_id`, `member`
+					FROM
+						" . $this->table_2 . " 
+					WHERE
+						cr_id='".$this->cr_id."'
+					ORDER BY vs_regdate DESC
+					LIMIT 0, 1";
+		// prepare query statement
+		$stmt = $this->conn->prepare($query);
+		// execute query
+		$stmt->execute();
+
+		$row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+		if(!$row['vs_startup_information'])
+		{
+			$output = new stdClass();
+			$output->message = '차량시동상태를 걸어주세요.';
+
+			return $output;
+		}
+
+		if($row['vs_startup_information'] != 'off') 
+		{
+			$output = new stdClass();
+			$output->message = '시동중';
+			return $output;
+		}
+
+		$output = new stdClass();
+		$output->vs_startup_information = $row['vs_startup_information'];
+		$output->cr_id = $row['cr_id'];
+		$output->member = $row['member'];
+		$output->message = '시동가능';
+		return $output;
+	}
 
 }
 
