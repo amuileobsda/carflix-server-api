@@ -44,6 +44,7 @@
 					if($user_data['mb_is_admin'] != 'y')
 					{
 						$_SESSION['mb_userid'] = $user_data['mb_userid'];
+						$_SESSION['mb_id'] = $user_data['mb_id'];
 						header("Location: member_dashboard/member.php");
 						die;
 					}else

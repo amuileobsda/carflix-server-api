@@ -4,14 +4,20 @@
 	include("../connection.php");
 	include("../functions.php");
 
+  $mb_userid = $_SESSION['mb_userid'];
+  $mb_id = $_SESSION['mb_id'];
+  // $mb_id = $_GET['mb_id'];
+  // $mb_userid = $_GET['mb_userid'];
+  // echo $mb_id;
+
 	$user_data = check_login($con);
 	$member_count = check_member_number($con);
 	$ceo_count = check_ceo_number($con);
 	$car_count = check_car_number($con);
 
-  $small_group_number = check_small_group_number($con);
-  $ceo_group_number = check_ceo_group_number($con);
-  $rent_group_number = check_rent_group_number($con);
+  $small_group_number = check_small_group_number($con, $mb_id);
+  $ceo_group_number = check_ceo_group_number($con, $mb_id);
+  $rent_group_number = check_rent_group_number($con, $mb_id);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,19 +59,19 @@
         </div>
         <div class="p-2 py-4 hover:bg-indigo-100 ">
           <div class="flex flex-row space-x-3 ">
-            <img src="https://cdn.icon-icons.com/icons2/1572/PNG/512/3592856-general-group-office-personal-relation-team-team-structure_107770.png" class="h-6 w-6 text-indigo-500 ">
+            <img src="../images/small.png" class="h-6 w-6 text-indigo-500 ">
             <h4 class="font-regular text-gray-500 hover:text-indigo-600"><a href="small_group.php">소규모 그룹</a></h4>
           </div>
         </div>
         <div class="p-2 py-4 hover:bg-indigo-100 ">
           <div class="flex flex-row space-x-3 ">
-          <img src="https://cdn.icon-icons.com/icons2/1572/PNG/512/3592856-general-group-office-personal-relation-team-team-structure_107770.png" class="h-6 w-6 text-indigo-500 ">
+          <img src="../images/ceo.png" class="h-6 w-6 text-indigo-500 ">
             <h4 class="font-regular text-gray-500 hover:text-indigo-600"><a href="ceo_group.php">대규모 그룹</a></h4>
           </div>
         </div>
         <div class="p-2 py-4 hover:bg-indigo-100 ">
           <div class="flex flex-row space-x-3 ">
-          <img src="https://cdn.icon-icons.com/icons2/1572/PNG/512/3592856-general-group-office-personal-relation-team-team-structure_107770.png" class="h-6 w-6 text-indigo-500 ">
+          <img src="../images/rent.jpg" class="h-6 w-6 text-indigo-500 ">
             <h4 class="font-regular text-gray-500 hover:text-indigo-600"><a href="rent_group.php">렌트 그룹</a></h4>
           </div>
         </div>

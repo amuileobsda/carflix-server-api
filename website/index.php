@@ -60,19 +60,19 @@
         </div>
         <div class="p-2 py-4 hover:bg-indigo-100 ">
           <div class="flex flex-row space-x-3 ">
-            <img src="https://cdn.icon-icons.com/icons2/1572/PNG/512/3592856-general-group-office-personal-relation-team-team-structure_107770.png" class="h-6 w-6 text-indigo-500 ">
+            <img src="./images/small.png" class="h-6 w-6 text-indigo-500 ">
             <h4 class="font-regular text-gray-500 hover:text-indigo-600"><a href="small_management.php">소규모그룹 대표관리</a></h4>
           </div>
         </div>
         <div class="p-2 py-4 hover:bg-indigo-100 ">
           <div class="flex flex-row space-x-3 ">
-          <img src="https://cdn.icon-icons.com/icons2/1572/PNG/512/3592856-general-group-office-personal-relation-team-team-structure_107770.png" class="h-6 w-6 text-indigo-500 ">
+          <img src="./images/ceo.png" class="h-6 w-6 text-indigo-500 ">
             <h4 class="font-regular text-gray-500 hover:text-indigo-600"><a href="ceo_management.php">대규모그룹 대표관리</a></h4>
           </div>
         </div>
         <div class="p-2 py-4 hover:bg-indigo-100 ">
           <div class="flex flex-row space-x-3 ">
-          <img src="https://cdn.icon-icons.com/icons2/1572/PNG/512/3592856-general-group-office-personal-relation-team-team-structure_107770.png" class="h-6 w-6 text-indigo-500 ">
+          <img src="./images/rent.jpg" class="h-6 w-6 text-indigo-500 ">
             <h4 class="font-regular text-gray-500 hover:text-indigo-600"><a href="rent_management.php">렌트그룹 대표관리</a></h4>
           </div>
         </div>

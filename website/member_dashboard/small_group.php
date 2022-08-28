@@ -9,8 +9,8 @@
 	// $ceo_count = check_ceo_number($con);
 	// $car_count = check_car_number($con);
 
-    $_SESSION['mb_id'] = $user_data['mb_id'];
-    $group_info = samll_group_info($con);
+  $_SESSION['mb_id'] = $user_data['mb_id'];
+  $group_info = samll_group_info($con);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,20 +62,20 @@
         </div> -->
         <div class="p-2 py-4 hover:bg-indigo-100 ">
           <div class="flex flex-row space-x-3 ">
-            <img src="https://cdn.icon-icons.com/icons2/1572/PNG/512/3592856-general-group-office-personal-relation-team-team-structure_107770.png" class="h-6 w-6 text-indigo-500 ">
-            <h4 class="font-regular text-gray-500 hover:text-indigo-600"><a href="small_group.php">소규모 그룹 </a></h4>
+            <img src="../images/small.png" class="h-6 w-6 text-indigo-500 ">
+            <h4 class="font-regular text-gray-500 hover:text-indigo-600"><a href="small_group.php">소규모 그룹</a></h4>
           </div>
         </div>
         <div class="p-2 py-4 hover:bg-indigo-100 ">
           <div class="flex flex-row space-x-3 ">
-          <img src="https://cdn.icon-icons.com/icons2/1572/PNG/512/3592856-general-group-office-personal-relation-team-team-structure_107770.png" class="h-6 w-6 text-indigo-500 ">
-            <h4 class="font-regular text-gray-500 hover:text-indigo-600"><a href="ceo_group.php">대규모 그룹 </a></h4>
+          <img src="../images/ceo.png" class="h-6 w-6 text-indigo-500 ">
+            <h4 class="font-regular text-gray-500 hover:text-indigo-600"><a href="ceo_group.php">대규모 그룹</a></h4>
           </div>
         </div>
         <div class="p-2 py-4 hover:bg-indigo-100 ">
           <div class="flex flex-row space-x-3 ">
-          <img src="https://cdn.icon-icons.com/icons2/1572/PNG/512/3592856-general-group-office-personal-relation-team-team-structure_107770.png" class="h-6 w-6 text-indigo-500 ">
-            <h4 class="font-regular text-gray-500 hover:text-indigo-600"><a href="rent_group.php">렌트 그룹 </a></h4>
+          <img src="../images/rent.jpg" class="h-6 w-6 text-indigo-500 ">
+            <h4 class="font-regular text-gray-500 hover:text-indigo-600"><a href="rent_group.php">렌트 그룹</a></h4>
           </div>
         </div>
         <div class="p-2 py-4 hover:bg-indigo-100">
@@ -120,7 +120,7 @@
           </div>
          
           <!--Table-->
-          <div class="p-4 font-bold text-gray-600">대표들</div>
+          <div class="p-4 font-bold text-gray-600">그룹 리스트</div>
           <div class="grid  lg:grid-cols-1  md:grid-cols-1 p-4 gap-3">
             <div class="col-span-2 flex flex-auto items-center justify-between  p-5 bg-white rounded shadow-sm">
               <table class="min-w-full divide-y divide-gray-200 table-auto">
@@ -216,8 +216,9 @@
                       2022-08-24 17:50
                     </td> -->
 
-                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                      <a href="#" class="text-indigo-600 hover:text-indigo-900">보기</a>
+                    <td class="px-6 py-4 whitespace-nowrap text-right text-sm text-gray-500 font-medium">
+                      <a href="small_group_vehicle.php?sg_id=<?php echo $val['sg_id'];?>&status=<?php echo $val['status'];?>" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">차량보기</a>
+                      <a href="small_group_member.php?sg_id=<?php echo $val['sg_id'];?>&status=<?php echo $val['status'];?>" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">회원보기</a>
                     </td>
 
                   </tr>
