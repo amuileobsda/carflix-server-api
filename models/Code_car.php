@@ -51,7 +51,7 @@ class Code_car extends Invite_code
 
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if($row['cc_id'] == null) return false;
+        if($row['cc_id'] == null || !$row['cc_id']) return false;
 
 		$this->cc_id = htmlspecialchars(strip_tags($row["cc_id"]));
         $this->group_id = htmlspecialchars(strip_tags($row["group_id"]));

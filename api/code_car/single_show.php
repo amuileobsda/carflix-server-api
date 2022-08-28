@@ -14,6 +14,15 @@
     $code_car->status = isset($_GET['status']) ? $_GET['status'] : die();
     $code_car->single_show();
 
+    if(!$code_car->cc_id || $code_car->cc_id == null)
+    {
+        $code_car_item = array(
+            'message' => '존재하는 값이 없습니다.'
+        );
+        print_r(json_encode($code_car_item));
+        return false;
+    }
+
     $code_car_item = array(
         'cc_id' => $code_car->cc_id,
         'group_id' => $code_car->group_id,	
