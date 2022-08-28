@@ -202,10 +202,10 @@
                       class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
                       회원 아이디
                     </th>
-                    <!-- <th scope="col"
+                    <th scope="col"
                       class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      유저 아이디
-                    </th> -->
+                      <!-- 유저 아이디 -->
+                    </th>
                     <th scope="col"
                       class="px-6 py-3 text-left text-xs font-bold text-gray-500 uppercase tracking-wider">
                       유저 닉네임
@@ -263,34 +263,33 @@
                       </div>
                     </td>
 
-                    <td class="px-6 py-4 whitespace-nowrap">
-                      <span
-                        class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                         <?= $val['mb_nickname']?>
-                      </span>
-                    </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-left text-sm text-gray-500 font-medium">
-                        <a href="#" class="bg-blue-500 hover:bg-blue-100 text-white font-semibold py-2 px-4 border border-gray-400 rounded shadow">차량로그</a>
-                    </td>
-                    
-
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      <?= $val['mb_lastlogin_datetime']?>
-                    </td>
-
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                      <?= $val['mb_regdate']?>
-                    </td>
-                
                     <form method="post">
+                      <td class="px-6 py-4 whitespace-nowrap">
+                        <button type="submit" name="removeAction" value="<?= $val['mb_id']?>" class="bg-rose-500 hover:bg-gray-100 text-white font-semibold py-2 px-4 border border-gray-400 rounded shadow">그룹추방</button>
+                      </td>
+
+                      <td class="px-6 py-4 whitespace-nowrap">
+                        <span
+                          class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                          <?= $val['mb_nickname']?>
+                        </span>
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap text-left text-sm text-gray-500 font-medium">
+                          <a href="ceo_group_member_vehicle_log.php?cg_id=<?php echo $cg_id;?>&status=<?php echo $status;?>&mb_id=<?php echo $val['mb_id'];?>" class="bg-blue-500 hover:bg-blue-100 text-white font-semibold py-2 px-4 border border-gray-400 rounded shadow">차량로그</a>
+                      </td>
+                    
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        <?= $val['mb_lastlogin_datetime']?>
+                      </td>
+
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        <?= $val['mb_regdate']?>
+                      </td>
+                   
                       <td class="px-6 py-4 whitespace-nowrap text-right text-sm text-gray-500 font-medium">
-                        <div class="text-center pb-2">
-                          <button type="submit" name="removeAction" value="<?= $val['mb_id']?>" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">그룹추방</button>
-                        </div>
-                        <div>
                           <button type="submit" name="updateManagerAction" value="<?= $val['mb_id']?>" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">부매니저 권한</button>
                           <button type="submit" name="updateMemberAction" value="<?= $val['mb_id']?>" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">일반사용자 권한</button>
-                        </div>
+                        <!-- </div> -->
                       </td>
                     </form>
 
