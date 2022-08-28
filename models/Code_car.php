@@ -33,10 +33,21 @@ class Code_car extends Invite_code
     // 초대 코드 등록후 해당 그룹 보여주는 api(작업중)
     public function single_show()
 	{
-		$query = "SELECT * FROM code_car WHERE member = ? ORDER BY cc_regdate DESC";
-		$stmt = $this->conn->prepare($query);
-		$stmt->bindParam(1, $this->member);
-		$stmt->execute();
+		// $query = "SELECT * FROM code_car WHERE member = ? and group_id = ? and status = ? ORDER BY cc_regdate DESC";
+		// $stmt = $this->conn->prepare($query);
+		// $stmt->bindParam(1, $this->member, $this->group_id, $this->status);
+		// $stmt->execute();
+
+         //존재하는지 예외처리
+         $query = "SELECT 
+                     `cc_id`, `group_id`, `status`, `cc_manager`
+                    FROM 
+                        " . $this->table . " 
+                    WHERE 
+                        group_id= '".$this->group_id."' AND status = '".$this->status."' AND member = '".$this->member."'
+                        ORDER BY cc_regdate DESC";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
 
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
 

@@ -10,6 +10,8 @@
 	$code_car = new Code_car($connect);
 
     $code_car->member = isset($_GET['mb_id']) ? $_GET['mb_id'] : die();
+    $code_car->group_id = isset($_GET['group_id']) ? $_GET['group_id'] : die();
+    $code_car->status = isset($_GET['status']) ? $_GET['status'] : die();
     $code_car->single_show();
 
     $code_car_item = array(
