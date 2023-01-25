@@ -1,7 +1,7 @@
 ## carflix-server-api
 carflix-server-api server api문서를 관리하기 위함
     
-
+***
 ### ERD
 <img width="100%" src="https://user-images.githubusercontent.com/30142355/181522917-6b69d233-ee63-4018-bf6e-4ea3e7c75d6e.png"/>   
 
@@ -44,7 +44,7 @@ car_registeration로 보내서
 </p>
 </details>  
     
-
+***
 ### 테이블 구조
 #### 1. member 테이블 구조
 |컬럼명|컬럼타입|설명|
