@@ -31,6 +31,7 @@ car_registeration로 보내서
 
 <details><summary style="color:skyblue">CLICK ME</summary>
 <p>
+    
 ```
 아두이노로부터 cr_id, member, vs_authentication_value를 받고
 임의의 난수로 시동정보ID 생성해서 DB에 넣고 다시 아두이노로 전송
