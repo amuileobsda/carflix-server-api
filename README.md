@@ -6,8 +6,8 @@ carflix-server-api server api문서를 관리하기 위함
 ## 1. ERD
 <img width="100%" src="https://user-images.githubusercontent.com/30142355/181522917-6b69d233-ee63-4018-bf6e-4ea3e7c75d6e.png"/>   
 
-### 1.1 ERD추가설명
-### 1.1.1 code_car테이블 설명
+### 1.1. ERD추가설명
+### 1.1.1. code_car테이블 설명
 
 <details><summary style="color:skyblue">CLICK ME</summary>
 <p>
@@ -28,7 +28,7 @@ car_registeration로 보내서
 </p>
 </details>    
     
-### 1.1.2 vehicle_status 테이블 설명
+### 1.1.2. vehicle_status 테이블 설명
 
 <details><summary style="color:skyblue">CLICK ME</summary>
 <p>
@@ -48,7 +48,7 @@ car_registeration로 보내서
     
 ***
 ## 2. 테이블 구조
-### 2.1 member 테이블 구조
+### 2.1. member 테이블 구조
 |컬럼명|컬럼타입|설명|
 |------|---|---|
 |`mb_id`|INT|PK|
@@ -64,7 +64,7 @@ car_registeration로 보내서
 |`mb_regdate`|DATETIME|회원 가입일|
 
 
-### 2.2 small_group 테이블 구조
+### 2.2. small_group 테이블 구조
 |컬럼명|컬럼타입|설명|
 |------|---|---|
 |`sg_id`|INT|PK|
@@ -75,7 +75,7 @@ car_registeration로 보내서
 |`sg_regdate`|DATETIME|소규모 그룹 생성일|
 
 
-### 2.3 ceo_group 테이블 구조
+### 2.3. ceo_group 테이블 구조
 |컬럼명|컬럼타입|설명|
 |------|---|---|
 |`cg_id`|INT|PK|
@@ -89,7 +89,7 @@ car_registeration로 보내서
 |`cg_regdate`|DATETIME|대규모 그룹 생성일|
 
 
-### 2.4 rent_group 테이블 구조
+### 2.4. rent_group 테이블 구조
 |컬럼명|컬럼타입|설명|
 |------|---|---|
 |`rg_id`|INT|PK|
@@ -103,7 +103,7 @@ car_registeration로 보내서
 |`rg_regdate`|DATETIME|렌트카 그룹 생성일|
 
 
-### 2.5 invite_code 테이블 구조
+### 2.5. invite_code 테이블 구조
 |컬럼명|컬럼타입|설명|
 |------|---|---|
 |`ic_id`|INT|PK|
@@ -114,7 +114,7 @@ car_registeration로 보내서
 |`ic_regdate`|DATETIME|초대코드 생성일|
 
 
-### 2.6 code_car 테이블 구조
+### 2.6. code_car 테이블 구조
 |컬럼명|컬럼타입|설명|
 |------|---|---|
 |`cc_id`|INT|PK|
@@ -126,7 +126,7 @@ car_registeration로 보내서
 |`cc_regdate`|DATETIME|초대코드 받아서 등록한 날짜|
 
 
-### 2.7 car_registeration 테이블 구조
+### 2.7. car_registeration 테이블 구조
 |컬럼명|컬럼타입|설명|
 |------|---|---|
 |`cr_id`|INT|PK|
@@ -140,7 +140,7 @@ car_registeration로 보내서
 |`cr_regdate`|DATETIME|자동차 등록일|
 
 
-### 2.8 vehicle_status 테이블 구조
+### 2.8. vehicle_status 테이블 구조
 |컬럼명|컬럼타입|설명|
 |------|---|---|
 |`vs_id`|INT|PK|
