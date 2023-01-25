@@ -28,6 +28,9 @@ car_registeration로 보내서
 </details>    
     
 #### 8. vehicle_status 테이블 설명
+
+<details><summary style="color:skyblue">CLICK ME</summary>
+<p>
 ```
 아두이노로부터 cr_id, member, vs_authentication_value를 받고
 임의의 난수로 시동정보ID 생성해서 DB에 넣고 다시 아두이노로 전송
@@ -37,7 +40,9 @@ car_registeration로 보내서
 이때 시동정보 ID와 위도, 경도를 받아서 DB에 계속 넣어주자.
 처음에 시동 요청이 왔을 때 즉, 시동정보ID를 생성하기 전에는 위도, 경도에 0값을 넣어주자.
 ```   
-
+</p>
+</details>  
+    
 
 ### 테이블 구조
 #### 1. member 테이블 구조
