@@ -6,9 +6,7 @@ carflix-server-api server api문서를 관리하기 위함
 ## 1. ERD
 
 개체-관계 모델. 테이블간의 관계를 설명해주는 다이어그램이라고 볼 수 있으며, 
-
 이를 통해 프로젝트에서 사용되는 DB의 구조를 한눈에 파악할 수 있다.
-
 즉, API를 효율적으로 뽑아내기 위한 모델 구조도라고 생각하면 된다.
 
 <img width="100%" src="https://user-images.githubusercontent.com/30142355/181522917-6b69d233-ee63-4018-bf6e-4ea3e7c75d6e.png"/>   
