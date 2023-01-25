@@ -13,7 +13,7 @@ carflix-server-api server api문서를 관리하기 위함
 
 <img width="100%" src="https://user-images.githubusercontent.com/30142355/181522917-6b69d233-ee63-4018-bf6e-4ea3e7c75d6e.png"/>   
 
-### 1.1. ERD추가설명
+### 1.1. ERD 상세설명
 ### 1.1.1. code_car테이블 설명
 
 <details><summary style="color:skyblue">CLICK ME</summary>
