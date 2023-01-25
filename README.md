@@ -31,7 +31,8 @@ car_registeration로 보내서
 ```   
 
 
-### 1. member 테이블 구조
+### 테이블 구조
+#### 1. member 테이블 구조
 |컬럼명|컬럼타입|설명|
 |------|---|---|
 |`mb_id`|INT|PK|
@@ -47,7 +48,7 @@ car_registeration로 보내서
 |`mb_regdate`|DATETIME|회원 가입일|
 
 
-### 2. small_group 테이블 구조
+#### 2. small_group 테이블 구조
 |컬럼명|컬럼타입|설명|
 |------|---|---|
 |`sg_id`|INT|PK|
@@ -58,7 +59,7 @@ car_registeration로 보내서
 |`sg_regdate`|DATETIME|소규모 그룹 생성일|
 
 
-### 3. ceo_group 테이블 구조
+#### 3. ceo_group 테이블 구조
 |컬럼명|컬럼타입|설명|
 |------|---|---|
 |`cg_id`|INT|PK|
@@ -72,7 +73,7 @@ car_registeration로 보내서
 |`cg_regdate`|DATETIME|대규모 그룹 생성일|
 
 
-### 4. rent_group 테이블 구조
+#### 4. rent_group 테이블 구조
 |컬럼명|컬럼타입|설명|
 |------|---|---|
 |`rg_id`|INT|PK|
@@ -86,7 +87,7 @@ car_registeration로 보내서
 |`rg_regdate`|DATETIME|렌트카 그룹 생성일|
 
 
-### 5. invite_code 테이블 구조
+#### 5. invite_code 테이블 구조
 |컬럼명|컬럼타입|설명|
 |------|---|---|
 |`ic_id`|INT|PK|
@@ -97,7 +98,7 @@ car_registeration로 보내서
 |`ic_regdate`|DATETIME|초대코드 생성일|
 
 
-### 6. code_car 테이블 구조
+#### 6. code_car 테이블 구조
 |컬럼명|컬럼타입|설명|
 |------|---|---|
 |`cc_id`|INT|PK|
@@ -109,7 +110,7 @@ car_registeration로 보내서
 |`cc_regdate`|DATETIME|초대코드 받아서 등록한 날짜|
 
 
-### 7. car_registeration 테이블 구조
+#### 7. car_registeration 테이블 구조
 |컬럼명|컬럼타입|설명|
 |------|---|---|
 |`cr_id`|INT|PK|
@@ -123,7 +124,7 @@ car_registeration로 보내서
 |`cr_regdate`|DATETIME|자동차 등록일|
 
 
-### 8. vehicle_status 테이블 구조
+#### 8. vehicle_status 테이블 구조
 |컬럼명|컬럼타입|설명|
 |------|---|---|
 |`vs_id`|INT|PK|
