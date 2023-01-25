@@ -2,9 +2,10 @@
 carflix-server-api server api문서를 관리하기 위함
     
 
-## ERD
+### ERD
 <img width="100%" src="https://user-images.githubusercontent.com/30142355/181522917-6b69d233-ee63-4018-bf6e-4ea3e7c75d6e.png"/>   
 
+### ERD추가설명
 #### 6. code_car테이블 설명
 ```
 ic_number를 받은 사용자는 해당 ic_number를 등록하면 동시에
