@@ -7,6 +7,8 @@ carflix-server-api server api문서를 관리하기 위함
 
 ### ERD추가설명
 #### 6. code_car테이블 설명
+<details><summary style="color:skyblue">CLICK ME</summary>
+<p>
 ```
 ic_number를 받은 사용자는 해당 ic_number를 등록하면 동시에
 invite_code에서 받아온 group_id, status, mb_id를 
@@ -20,6 +22,9 @@ car_registeration로 보내서
 초대코드로 발급받은 그룹은 사용자가 그룹 삭제시
 테이블에서 찾아서 cc_id 삭제하면 그룹해제됨
 ```   
+</p>
+</details>    
+    
 #### 8. vehicle_status 테이블 설명
 ```
 아두이노로부터 cr_id, member, vs_authentication_value를 받고
