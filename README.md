@@ -7,8 +7,10 @@ carflix-server-api server api문서를 관리하기 위함
 
 ### ERD추가설명
 #### 6. code_car테이블 설명
+
 <details><summary style="color:skyblue">CLICK ME</summary>
 <p>
+    
 ```
 ic_number를 받은 사용자는 해당 ic_number를 등록하면 동시에
 invite_code에서 받아온 group_id, status, mb_id를 
