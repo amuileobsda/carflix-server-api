@@ -8,3 +8,8 @@
 *.git
 
 */db.php
+
+/api/category/*
+/api/post/*
+/models/Post.php
+/models/Category.php
