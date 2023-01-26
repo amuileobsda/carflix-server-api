@@ -167,9 +167,31 @@ car_registeration로 보내서
 |------|---|---|
 |`GET`|전체회원 조회|13.56.94.107/admin/api/member/read.php|
 |`GET`|특정회원 조회|13.56.94.107/admin/api/member/show.php?mb_id=1|
-|`POST`|회원생성|http://13.56.94.107/admin/api/member/create.php|
-|`PUT`|특정회원 정보 업데이트|http://13.56.94.107/admin/api/member/update.php|
-|`DEL`|특정회원 삭제|http://13.56.94.107/admin/api/member/delete.php|
+|`POST`|회원생성|13.56.94.107/admin/api/member/create.php|
+|`PUT`|특정회원 정보 업데이트|13.56.94.107/admin/api/member/update.php|
+|`DEL`|특정회원 삭제|13.56.94.107/admin/api/member/delete.php|
 |`GET`|회원 아이디 중복 조회|13.56.94.107/admin/api/member/show_single_name.php?mb_userid=testtesttest|
 |`GET`|로그인|13.56.94.107/admin/api/member/login_v3.php?mb_userid=test&mb_password=test|
+
+
+### 3.2. 차량
+|REST|설명|URL|
+|------|---|---|
+|`GET`|전체차량 조회|13.56.94.107/admin/api/car/read.php|
+|`GET`|특정차량 조회|13.56.94.107/admin/api/car/show.php?cr_id=1|
+|`POST`|차량생성|13.56.94.107/admin/api/car/create.php|
+|`PUT`|특정차량 정보 업데이트|13.56.94.107/admin/api/car/update.php|
+|`DEL`|특정차량 삭제|13.56.94.107/admin/api/car/delete.php|
+|`GET`|그룹에 등록된 차량 조회|13.56.94.107/admin/api/car/group_show.php?mb_id=3&group_id=2&status=ceo_group|
+|`DEL`|차량 등록 해제 성공후 제거|13.56.94.107/admin/api/car/registration_delete.php|
+|`GET`|차량 등록 해제 요청|13.56.94.107/admin/api/car/registration_delete_request.php|
+|`DEL`|맥 주소로 차량 삭제|13.56.94.107/admin/api/car/macaddress_delete.php|
+
+
+
+
+
+
+
+
 
