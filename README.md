@@ -23,6 +23,7 @@ Carflix 서비스의 목표는 다음과 같다.
 ```
 
 ## 1.3. 서버 구조도
+![그림](https://user-images.githubusercontent.com/30142355/214896441-36187818-5214-479f-8ee7-3e64b66ee4ed.png)
 
 
 # 2. 서버파트
