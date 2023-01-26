@@ -10,7 +10,7 @@
     $db = new db();
     $connect = $db->connect();
     $ceo_group = new Ceo_group($connect);
-    // echo "어디가 문제야?";
+    
     $data = json_decode(file_get_contents("php://input"));
     $now = new DateTime();
     $objDateTime = $now->format('Y-m-d H:i:s');
@@ -25,7 +25,6 @@
     $ceo_group->cg_regdate = $objDateTime;
     $ceo_group->cg_id = $data->cg_id;
 
-    echo "어디가 문제야???";
 
     if($ceo_group->update()) {
         echo json_encode(

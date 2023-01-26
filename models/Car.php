@@ -69,7 +69,7 @@ class Car
 
 	public function create()
 	{
-		// echo "잘실행되고있다.";
+		
 		$query = "INSERT INTO car_registeration SET mb_id= :mb_id, group_id= :group_id, status= :status, cr_number_classification= :cr_number_classification, cr_registeration_number= :cr_registeration_number, 
 					cr_carname= :cr_carname, cr_mac_address= :cr_mac_address, cr_regdate= :cr_regdate";
 		$stmt = $this->conn->prepare($query);
@@ -94,7 +94,7 @@ class Car
 		$stmt->bindParam(':cr_mac_address', $this->cr_mac_address);
 		$stmt->bindParam(':cr_regdate', $this->cr_regdate);
 
-		// echo "잘실행되고있다.";
+		
 		if($stmt->execute()) {
 			//차량 등록요청후 cr_id 넘겨주자.
 			$query = "SELECT 
@@ -114,14 +114,14 @@ class Car
 
 			return $output;
 		}
-		// echo "왜 여기로 넘어와?.";
+		
 		printf("Error %s.\n", $stmt->error);
 		return false;
 	}
 
 	public function update()
 	{
-		// echo "잘실행되고있다.";
+		
 		$query = "UPDATE car_registeration SET mb_id= :mb_id, group_id= :group_id, status= :status, cr_number_classification= :cr_number_classification, cr_registeration_number= :cr_registeration_number, 
 					cr_carname= :cr_carname, cr_mac_address= :cr_mac_address, cr_regdate= :cr_regdate
 					WHERE cr_id = :cr_id";
@@ -148,12 +148,12 @@ class Car
 		$stmt->bindParam(':cr_regdate', $this->cr_regdate);
         $stmt->bindParam(':cr_id', $this->cr_id);
         
-		// echo "잘실행되고있다.";
+		
 		if($stmt->execute()) {
-			// echo "잘실행되고있다.";
+			
 			return true;
 		}
-		// echo "왜 여기로 넘어와?.";
+		
 		printf("Error %s.\n", $stmt->error);
 		return false;
 	}

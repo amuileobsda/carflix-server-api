@@ -147,7 +147,7 @@ class Rent_group
 		return false;
 
 
-		// // echo "잘실행되고있다.";
+		
 		// $query = "INSERT INTO rent_group SET mb_id= :mb_id, rg_career= :rg_career, rg_certificate= :rg_certificate, rg_company_registernumber= :rg_company_registernumber, 
         //             rg_title= :rg_title, rg_description= :rg_description, status= :status, rg_regdate= :rg_regdate";
 		// $stmt = $this->conn->prepare($query);
@@ -172,17 +172,17 @@ class Rent_group
         // $stmt->bindParam(':status', $this->status);
         // $stmt->bindParam(':rg_regdate', $this->rg_regdate);
 
-		// // echo "잘실행되고있다.";
+		
 		// if($stmt->execute()) {
-		// 	// echo "잘실행되고있다.";
+		
 		// 	return true;
 		// }
-		// echo "왜 여기로 넘어와?.";
+		
 	}
 
 	public function update()
 	{
-		// echo "잘실행되고있다.";
+		
 
         $query = "UPDATE rent_group SET mb_id= :mb_id, rg_career= :rg_career, rg_certificate= :rg_certificate, rg_company_registernumber= :rg_company_registernumber, 
                     rg_title= :rg_title, rg_description= :rg_description, status= :status, rg_regdate= :rg_regdate
@@ -209,12 +209,12 @@ class Rent_group
         $stmt->bindParam(':rg_regdate', $this->rg_regdate);
         $stmt->bindParam(':rg_id', $this->rg_id);
         
-		// echo "잘실행되고있다.";
+		
 		if($stmt->execute()) {
-			// echo "잘실행되고있다.";
+			
 			return true;
 		}
-		// echo "왜 여기로 넘어와?.";
+		
 		printf("Error %s.\n", $stmt->error);
 		return false;
 	}

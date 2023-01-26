@@ -22,13 +22,13 @@
 
     // $db->select('member', '*', null, "mb_userid='{$member->mb_userid}'", null, null);
     $datas = $member->member_login();
-    echo "서버문제?";
+    
 
     foreach ($datas as $data) {
         $mb_id = $data['mb_id'];
         $mb_userid = $data['mb_userid'];
         // $mb_password=$data['mb_password'];
-        echo "여기까지 왓나?";
+        
         if (!$mb_id) {
             echo json_encode([
                 'status' => 0,

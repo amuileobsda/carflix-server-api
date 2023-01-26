@@ -107,7 +107,7 @@ class Code_car extends Invite_code
 		// }
         // echo $invite_code_array;
 
-		// echo "일로 넘어왔다 3";
+		
 		// // return $output;
         // echo $output;
 
@@ -128,14 +128,14 @@ class Code_car extends Invite_code
             $stmt_2->bindParam(':member', $this->member);
             $stmt_2->bindParam(':cc_regdate', $this->cc_regdate);
 
-            // echo "잘실행되고있다.";
+            
             if($stmt_2->execute()) {
-                // echo "잘실행되고있다.";
+                
                 return $output;
             }
         }else
         {
-            // echo "왜 여기로 넘어와?.";
+            
 		    printf("Error %s.\n", $stmt->error);
 		    return false;
         }

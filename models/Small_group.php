@@ -62,7 +62,7 @@ class Small_group
 
 	public function create()
 	{
-		// echo "잘실행되고있다.";
+		
 		$query = "INSERT INTO small_group SET mb_id= :mb_id, sg_title= :sg_title, sg_description= :sg_description, status= :status, sg_regdate= :sg_regdate";
 		$stmt = $this->conn->prepare($query);
 
@@ -80,9 +80,9 @@ class Small_group
 		$stmt->bindParam(':status', $this->status);
 		$stmt->bindParam(':sg_regdate', $this->sg_regdate);
 
-		// echo "잘실행되고있다.";
+		
 		if($stmt->execute()) {
-			// echo "잘실행되고있다.";
+			
 			return true;
 		}
 		// echo "왜 여기로 넘어와?.";
@@ -92,7 +92,7 @@ class Small_group
 
 	public function update()
 	{
-		// echo "잘실행되고있다.";
+		
 		$query = "UPDATE small_group SET mb_id= :mb_id, sg_title= :sg_title, sg_description= :sg_description, status= :status, sg_regdate= :sg_regdate
 					WHERE sg_id = :sg_id";
 
@@ -112,12 +112,12 @@ class Small_group
 		$stmt->bindParam(':sg_regdate', $this->sg_regdate);
 		$stmt->bindParam(':sg_id', $this->sg_id);
         
-		// echo "잘실행되고있다.";
+		
 		if($stmt->execute()) {
-			// echo "잘실행되고있다.";
+			
 			return true;
 		}
-		// echo "왜 여기로 넘어와?.";
+		
 		printf("Error %s.\n", $stmt->error);
 		return false;
 	}

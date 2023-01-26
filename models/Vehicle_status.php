@@ -190,7 +190,7 @@ class Vehicle_status
 	//2022.08.23
 	public function start_request_check()
 	{
-		// echo "어디가문제야>?";
+		
 		//car_registeration 테이블에서 확인
 		$query = "SELECT
 		 				`cr_id`
@@ -206,7 +206,7 @@ class Vehicle_status
 		$row = $stmt->fetch(PDO::FETCH_ASSOC);
 		if($row['cr_id'] == null) return false;
 
-		// echo "어디가문제야>?";
+		
 		$vs_startup_information = 'on';
 		$member = $this->mb_id;
 		$vs_authentication_value = '';
@@ -214,14 +214,14 @@ class Vehicle_status
 		$vs_longitude = '';
 		$now = new DateTime();
     	$objDateTime = $now->format('Y-m-d H:i:s');
-		// echo "어디가문제야>?";
+		
 		//검증됐으니 vehicle_status 테이블로 가서 저장해둔다.
 		// Create query
 		$query = 'INSERT INTO ' . $this->table . ' SET vs_startup_information = :vs_startup_information, cr_id = :cr_id, member = :member, vs_authentication_value = :vs_authentication_value, vs_latitude = :vs_latitude, vs_longitude = :vs_longitude, vs_regdate = :vs_regdate';
 
 		// Prepare statement
 		$stmt = $this->conn->prepare($query);
-		// echo "어디가문제야>?";
+		
 		// Clean data
 		$vs_startup_information = htmlspecialchars(strip_tags($vs_startup_information));
 		$this->cr_id = htmlspecialchars(strip_tags($this->cr_id));
@@ -239,7 +239,7 @@ class Vehicle_status
 		$stmt->bindParam(':vs_longitude', $vs_longitude);
 		$stmt->bindParam(':vs_regdate', $objDateTime);
 		$stmt->execute();
-		// echo "어디가문제야>?";
+		
 		//vehicle_status 테이블에서 확인
 		$query_2 = "SELECT
 		 				`vs_id`

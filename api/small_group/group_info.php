@@ -13,8 +13,7 @@
     // $small_group->group_info();
 
     $read = $small_group->group_info();
-    // echo "1";
-    // echo $read;
+    
 	$num = $read->rowCount();
 	if($num>0)
 	{

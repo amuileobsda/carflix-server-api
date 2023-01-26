@@ -10,7 +10,7 @@
     $db = new db();
     $connect = $db->connect();
     $member = new Member($connect);
-    // echo "어디가 문제야?";
+    
     $data = json_decode(file_get_contents("php://input"));
     $now = new DateTime();
     $objDateTime = $now->format('Y-m-d H:i:s');
@@ -26,7 +26,7 @@
     $member->mb_register_car = $data->mb_register_car;
     $member->mb_lastlogin_datetime = $objDateTime;
     $member->mb_regdate = $objDateTime;
-    echo "어디가 문제야???";
+    
     if($member->update()) {
         echo json_encode(
           array('message' => 'member updated')

@@ -13,7 +13,7 @@
     // $ceo_group->group_info();
 
     $read = $ceo_group->group_info();
-    echo "1";
+    
     // echo $read;
 	$num = $read->rowCount();
 	if($num>0)

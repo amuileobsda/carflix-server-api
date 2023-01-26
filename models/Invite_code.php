@@ -60,12 +60,12 @@ class Invite_code
 		$stmt->bindParam(':ic_number', $this->ic_number);
 		$stmt->bindParam(':ic_regdate', $this->ic_regdate);
 
-		// echo "잘실행되고있다.";
+		
 		if($stmt->execute()) {
-			// echo "잘실행되고있다.";
+			
 			return true;
 		}
-		// echo "왜 여기로 넘어와?.";
+		
 		printf("Error %s.\n", $stmt->error);
 		return false;
 
@@ -73,7 +73,7 @@ class Invite_code
 
 	// public function check_invite_code($ic_number)
 	// {
-	// 	echo "일로 넘어왔다 1";
+	
 	// 	$query = "SELECT 
 	// 				`ic_id`, `mb_id`, `group_id`, `status`, `ic_number`, `ic_regdate`
 	// 				FROM 
@@ -83,9 +83,9 @@ class Invite_code
     //                 ORDER BY ic_regdate DESC";
 	// 	$stmt = $this->conn->prepare($query);
 	// 	$stmt->execute();
-    //     echo "일로 넘어왔다 2";
+
     //     $output = $stmt->fetch(PDO::FETCH_ASSOC);
-	// 	echo "일로 넘어왔다 3";
+	
 	// 	return $output;
 	// }
 

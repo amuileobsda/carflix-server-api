@@ -79,20 +79,20 @@ class Member
 
 	public function member_login()
 	{
-		// echo "2";
-		echo $this->mb_userid;
-		echo $this->mb_password;
+		
+		//echo $this->mb_userid;
+		//echo $this->mb_password;
 		$sql = "SELECT * FROM member WHERE mb_userid = ? AND mb_password = ?";
-		// echo "22";
+		
 		$stmt = $this->conn->prepare($sql);
-		// echo "23";
+		
 		$this->mb_userid = htmlspecialchars(strip_tags($this->mb_userid));
 		$this->mb_password = htmlspecialchars(strip_tags( $this->mb_password));
 		$stmt->bind_param(':mb_userid', $this->mb_userid);
 		$stmt->bind_param(':mb_password', $this->mb_password);
-		// echo "?????????????";
+		
 		$stmt->execute();
-		// echo "?";
+		
 
 		$result = $stmt->get_result(); // get the mysqli result
 		// $user = $result->fetch_assoc(); // fetch data
@@ -101,26 +101,26 @@ class Member
 		}
 
 		// $row = $stmt->fetch(PDO::FETCH_ASSOC);
-		// echo "???";
+		
 		// $this->mb_id = htmlspecialchars(strip_tags($row["mb_id"]));
 		// $this->mb_userid = htmlspecialchars(strip_tags($row["mb_userid"]));
 
-		// echo "24";
+		
 		// if($stmt->execute()) {
-		// 	// echo "잘실행되고있다.";
+		
 		// 	// $stmt->execute();
-		// 	// echo "25";
+		
 		// 	// $row = $stmt->fetch(PDO::FETCH_ASSOC);
 			
-		// 	echo "로그인 성공해라";
+		
 		// 	return true;
 		// }
 
 		// $output = $stmt->execute();
-		// echo "25";
+		
 		// $row = $stmt->fetch(PDO::FETCH_ASSOC);
 		
-		// echo "로그인 성공해라";
+		
 		// return $row;
 	}
 
@@ -200,9 +200,9 @@ class Member
 					$stmt->bindParam(':mb_register_car', $this->mb_register_car);
 					$stmt->bindParam(':mb_lastlogin_datetime', $this->mb_lastlogin_datetime);
 					$stmt->bindParam(':mb_regdate', $this->mb_regdate);
-					// echo "잘실행되고있다.";
+					
 					if($stmt->execute()) {
-						// echo "잘실행되고있다.";
+						
 						return true;
 					}
 
@@ -230,7 +230,7 @@ class Member
 		printf("Error %s.\n", $stmt->error);
 		return false;
 
-		// echo "잘실행되고있다.";
+		
 		// $query = "INSERT INTO member SET mb_userid= :mb_userid, mb_password= :mb_password, mb_email= :mb_email, mb_phone= :mb_phone, mb_nickname= :mb_nickname, 
 		// 			mb_image= :mb_image, mb_is_admin= :mb_is_admin, mb_register_car= :mb_register_car, mb_lastlogin_datetime= :mb_lastlogin_datetime, mb_regdate= :mb_regdate";
 		// $stmt = $this->conn->prepare($query);
@@ -258,17 +258,17 @@ class Member
 		// $stmt->bindParam(':mb_register_car', $this->mb_register_car);
 		// $stmt->bindParam(':mb_lastlogin_datetime', $this->mb_lastlogin_datetime);
 		// $stmt->bindParam(':mb_regdate', $this->mb_regdate);
-		// // echo "잘실행되고있다.";
+		
 		// if($stmt->execute()) {
-		// 	// echo "잘실행되고있다.";
+		
 		// 	return true;
 		// }
-		// // echo "왜 여기로 넘어와?.";
+		
 	}
 
 	public function update()
 	{
-		// echo "잘실행되고있다.";
+		
 		$query = "UPDATE member SET mb_userid= :mb_userid, mb_password= :mb_password, mb_email= :mb_email, mb_phone= :mb_phone, mb_nickname= :mb_nickname, 
 					mb_is_admin= :mb_is_admin, mb_register_car= :mb_register_car, mb_lastlogin_datetime= :mb_lastlogin_datetime, mb_regdate= :mb_regdate
 					WHERE mb_id = :mb_id";
@@ -298,12 +298,12 @@ class Member
 		$stmt->bindParam(':mb_regdate', $this->mb_regdate);
 		$stmt->bindParam(':mb_id', $this->mb_id);
 
-		// echo "잘실행되고있다.";
+		
 		if($stmt->execute()) {
-			// echo "잘실행되고있다.";
+			
 			return true;
 		}
-		// echo "왜 여기로 넘어와?.";
+		
 		printf("Error %s.\n", $stmt->error);
 		return false;
 	}

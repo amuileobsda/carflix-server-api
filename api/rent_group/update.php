@@ -10,7 +10,7 @@
     $db = new db();
     $connect = $db->connect();
     $rent_group = new Rent_group($connect);
-    // echo "어디가 문제야?";
+    
     $data = json_decode(file_get_contents("php://input"));
     $now = new DateTime();
     $objDateTime = $now->format('Y-m-d H:i:s');
@@ -25,7 +25,7 @@
     $rent_group->rg_regdate = $objDateTime;
     $rent_group->rg_id = $data->rg_id;
 
-    echo "어디가 문제야???";
+    
 
     if($rent_group->update()) {
         echo json_encode(

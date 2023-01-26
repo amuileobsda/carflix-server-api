@@ -10,7 +10,7 @@
     $db = new db();
     $connect = $db->connect();
     $car = new Car($connect);
-    // echo "어디가 문제야?";
+    
     $data = json_decode(file_get_contents("php://input"));
     $now = new DateTime();
     $objDateTime = $now->format('Y-m-d H:i:s');
@@ -25,7 +25,6 @@
     $car->cr_mac_address = $data->cr_mac_address;
     $car->cr_regdate = $objDateTime;
 
-    echo "어디가 문제야???";
     if($car->update()) {
         echo json_encode(
           array('message' => 'car updated')

@@ -10,7 +10,7 @@
     $db = new db();
     $connect = $db->connect();
     $small_group = new Small_group($connect);
-    // echo "어디가 문제야?";
+    
     $data = json_decode(file_get_contents("php://input"));
     $now = new DateTime();
     $objDateTime = $now->format('Y-m-d H:i:s');
@@ -22,7 +22,7 @@
     $small_group->status = $data->status;
     $small_group->sg_regdate = $objDateTime;
     
-    // echo "어디가 문제야???";
+    
     if($small_group->update()) {
         echo json_encode(
           array('message' => 'small_group updated')

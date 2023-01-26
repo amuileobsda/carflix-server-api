@@ -98,7 +98,7 @@ class Ceo_group
 					// echo $flag;
 					$this->cg_certificate = $image_name;
 
-					// echo "잘실행되고있다.";
+					
 					$query = "INSERT INTO ceo_group SET mb_id= :mb_id, cg_career= :cg_career, cg_certificate= :cg_certificate, cg_company_registernumber= :cg_company_registernumber, 
 									cg_title= :cg_title, cg_description= :cg_description, status= :status, cg_regdate= :cg_regdate";
 					$stmt = $this->conn->prepare($query);
@@ -123,9 +123,9 @@ class Ceo_group
 					$stmt->bindParam(':status', $this->status);
 					$stmt->bindParam(':cg_regdate', $this->cg_regdate);
 
-					// echo "잘실행되고있다.";
+					
 					if($stmt->execute()) {
-					// echo "잘실행되고있다.";
+					
 					return true;
 					}
 				
@@ -148,7 +148,7 @@ class Ceo_group
 		printf("Error %s.\n", $stmt->error);
 		return false;
 
-		// // echo "잘실행되고있다.";
+		
 		// $query = "INSERT INTO ceo_group SET mb_id= :mb_id, cg_career= :cg_career, cg_certificate= :cg_certificate, cg_company_registernumber= :cg_company_registernumber, 
         //             cg_title= :cg_title, cg_description= :cg_description, status= :status, cg_regdate= :cg_regdate";
 		// $stmt = $this->conn->prepare($query);
@@ -173,17 +173,17 @@ class Ceo_group
         // $stmt->bindParam(':status', $this->status);
         // $stmt->bindParam(':cg_regdate', $this->cg_regdate);
 
-		// // echo "잘실행되고있다.";
+		
 		// if($stmt->execute()) {
-		// 	// echo "잘실행되고있다.";
+		
 		// 	return true;
 		// }
-		// echo "왜 여기로 넘어와?.";
+		
 	}
 
 	public function update()
 	{
-		// echo "잘실행되고있다.";
+		
 
         $query = "UPDATE ceo_group SET mb_id= :mb_id, cg_career= :cg_career, cg_certificate= :cg_certificate, cg_company_registernumber= :cg_company_registernumber, cg_title= :cg_title,  cg_description= :cg_description,  status= :status, cg_regdate= :cg_regdate 
                     WHERE cg_id= :cg_id";
@@ -209,12 +209,12 @@ class Ceo_group
         $stmt->bindParam(':cg_regdate', $this->cg_regdate);
         $stmt->bindParam(':cg_id', $this->cg_id);
         
-		// echo "잘실행되고있다.";
+		
 		if($stmt->execute()) {
-			// echo "잘실행되고있다.";
+			
 			return true;
 		}
-		// echo "왜 여기로 넘어와?.";
+		
 		printf("Error %s.\n", $stmt->error);
 		return false;
 	}
