@@ -2,7 +2,7 @@
 carflix-server-api server api문서를 관리하기 위함
     
     
-***
+    
 ## 1. ERD
 
 개체-관계 모델. 테이블간의 관계를 설명해주는 다이어그램이라고 볼 수 있으며, 
@@ -53,8 +53,9 @@ car_registeration로 보내서
 </details>  
     
     
-***
+
 ## 2. 테이블 구조
+
 ### 2.1. member 테이블 구조
 |컬럼명|컬럼타입|설명|
 |------|---|---|
@@ -160,8 +161,9 @@ car_registeration로 보내서
 |`vs_regdate`|DATETIME|시동걸린시간|
 
 
-***
+
 ## 3. API 문서화
+
 ### 3.1. 회원
 |REST|설명|URL|
 |------|---|---|
