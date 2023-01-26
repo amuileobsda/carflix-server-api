@@ -163,14 +163,13 @@ car_registeration로 보내서
 ***
 ## 3. API 문서화
 ### 3.1. 회원
-|컬럼명|컬럼타입|설명|
+|REST|설명|URL|
 |------|---|---|
-|`REST`|URL|내용|
-|`GET`|13.56.94.107/admin/api/member/read.php|전체회원 조회|
-|`GET`|13.56.94.107/admin/api/member/show.php?mb_id=1|특정회원 조회|
-|`POST`|http://13.56.94.107/admin/api/member/create.php|회원생성|
-|`PUT`|http://13.56.94.107/admin/api/member/update.php|특정회원 정보 업데이트|
-|`DEL`|http://13.56.94.107/admin/api/member/delete.php|특정회원 삭제|
-|`GET`|13.56.94.107/admin/api/member/show_single_name.php?mb_userid=testtesttest|회원 아이디 중복 조회|
-|`GET`|13.56.94.107/admin/api/member/login_v3.php?mb_userid=test&mb_password=test|로그인|
+|`GET`|전체회원 조회|13.56.94.107/admin/api/member/read.php|
+|`GET`|특정회원 조회|13.56.94.107/admin/api/member/show.php?mb_id=1|
+|`POST`|회원생성|http://13.56.94.107/admin/api/member/create.php|
+|`PUT`|특정회원 정보 업데이트|http://13.56.94.107/admin/api/member/update.php|
+|`DEL`|특정회원 삭제|http://13.56.94.107/admin/api/member/delete.php|
+|`GET`|회원 아이디 중복 조회|13.56.94.107/admin/api/member/show_single_name.php?mb_userid=testtesttest|
+|`GET`|로그인|13.56.94.107/admin/api/member/login_v3.php?mb_userid=test&mb_password=test|
 
