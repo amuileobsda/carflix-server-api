@@ -1,9 +1,9 @@
 ## carflix-server-api
 carflix-server-api server api문서를 관리하기 위함
 
-|개발자|설명|
+|개발자|메일|
 |------|---|
-|`최정길`||    
+|`최정길`|legend_gil@naver.com|    
     
     
 ## 1. ERD
