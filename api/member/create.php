@@ -10,9 +10,9 @@
     $db = new db();
     $connect = $db->connect();
     $member = new Member($connect);
-    // echo "어디가 문제야?";
+    
     $data = json_decode(file_get_contents("php://input"));
-    // echo "어디가 문제야?";
+    
     $now = new DateTime();
     $objDateTime = $now->format('Y-m-d H:i:s');
     

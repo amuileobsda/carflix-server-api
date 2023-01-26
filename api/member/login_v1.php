@@ -15,9 +15,9 @@
 
     $member->mb_userid = $data->mb_userid;
     $member->mb_password = $data->mb_password;
-    echo "12";
+    
     $result = $member->member_login();
-    echo "123";
+    
     // $query = "SELECT * FROM member WHERE mb_userid = '$member->mb_userid' AND mb_password = '$member->mb_password'";
 	  // $result = mysqli_query($connect, $query);
 

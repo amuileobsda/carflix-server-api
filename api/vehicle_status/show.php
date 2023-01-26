@@ -18,7 +18,7 @@
     // $car->group_info();
 
     $read = $vehicle_status->show();
-    // echo "1";
+    
     // echo $read;
 	$num = $read->rowCount();
 	if($num>0)

@@ -15,9 +15,9 @@
 
     $member->mb_userid = isset($_GET['mb_userid']) ? $_GET['mb_userid'] : die();
     $member->mb_password = isset($_GET['mb_password']) ? $_GET['mb_password'] : die();
-    echo "1";
+    
     $stmt = $member->member_login();
-    echo "3";
+    
     if($stmt->rowCount() > 0)
     {
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
