@@ -188,10 +188,58 @@ car_registeration로 보내서
 |`DEL`|맥 주소로 차량 삭제|13.56.94.107/admin/api/car/macaddress_delete.php|
 
 
+### 3.3. 소규모그룹
+|REST|설명|URL|
+|------|---|---|
+|`GET`|전체 소규모그룹 조회|13.56.94.107/admin/api/small_group/read.php|
+|`GET`|특정 소규모그룹 조회|13.56.94.107/admin/api/small_group/show.php?sg_id=1|
+|`PUT`|특정 소규모그룹 정보 업데이트|13.56.94.107/admin/api/small_group/update.php|
+|`POST`|소규모그룹 생성|13.56.94.107/admin/api/small_group/create.php|
+|`DEL`|특정 소규모그룹 삭제|13.56.94.107/admin/api/small_group/delete.php|
+|`GET`|회원 아이디로 등록되어있는 전체 소규모그룹 조회|13.56.94.107/admin/api/small_group/group_info.php?mb_id=2|
 
 
+### 3.4. 대규모그룹
+|REST|설명|URL|
+|------|---|---|
+|`GET`|전체 대규모그룹 조회|13.56.94.107/admin/api/ceo_group/read.php|
+|`GET`|특정 대규모그룹 조회|13.56.94.107/admin/api/ceo_group/show.php?cg_id=1|
+|`POST`|대규모그룹 생성|13.56.94.107/admin/api/ceo_group/create.php|
+|`PUT`|특정 대규모그룹 정보 업데이트|13.56.94.107/admin/api/ceo_group/update.php|
+|`DEL`|특정 대규모그룹 삭제|13.56.94.107/admin/api/ceo_group/delete.php|
+|`GET`|회원 아이디로 등록되어있는 전체 대규모그룹 조회|13.56.94.107/admin/api/ceo_group/group_info.php?mb_id=2|
 
 
+### 3.5. 렌트그룹
+|REST|설명|URL|
+|------|---|---|
+|`GET`|전체 렌트그룹 조회|13.56.94.107/admin/api/rent_group/read.php|
+|`GET`|특정 렌트그룹 조회|13.56.94.107/admin/api/rent_group/show.php?rg_id=1|
+|`POST`|렌트그룹 생성|13.56.94.107/admin/api/rent_group/create.php|
+|`PUT`|특정 렌트그룹 정보 업데이트|13.56.94.107/admin/api/rent_group/update.php|
+|`DEL`|특정 렌트그룹 삭제|13.56.94.107/admin/api/rent_group/delete.php|
+|`GET`|회원 아이디로 등록되어있는 전체 렌트그룹 조회|13.56.94.107/admin/api/rent_group/group_info.php?mb_id=2|
 
+
+### 3.6. 초대코드
+|REST|설명|URL|
+|------|---|---|
+|`GET`|생성된 전체 초대코드 조회|13.56.94.107/admin/api/invite_code/read.php|
+|`GET`|특정 회원이 생성한 전체 초대코드|13.56.94.107/admin/api/invite_code/show.php?mb_id=2|
+|`POST`|초대코드 생성|13.56.94.107/admin/api/invite_code/create.php|
+|`POST`|대표가 생성한 초대코드 받아서 회원이 등록|13.56.94.107/admin/api/code_car/create.php|
+|`DEL`|그룹 해제|13.56.94.107/admin/api/code_car/delete.php|
+
+
+### 3.7. 차량상태
+|REST|설명|URL|
+|------|---|---|
+|`GET`|특정 차량상태 최신순으로 120개 불러옴|13.56.94.107/admin/api/vehicle_status/show.php?cr_id=2|
+|`POST`|시동상태 전송|13.56.94.107/admin/api/vehicle_status/boot_status.php|
+|`POST`|시동꺼짐 정보전송|13.56.94.107/admin/api/vehicle_status/connection_status.php|
+|`POST`|아두이노에 문제있을때 앱에서 서버로 보내는 상태|13.56.94.107/admin/api/code_car/create.php|
+|`GET`|시동요청이 올바른지 체크|13.56.94.107/admin/api/vehicle_status/boot_on.php?cr_id=3&mb_id=4|
+|`GET`|차량이 락인지 언락인지 체크|13.56.94.107/admin/api/vehicle_status/lockunlock.php?cr_id=3&mb_id=4&how=trunk_lock|
+|`GET`|현재 이차량이 시동가능한지 시동중인지 체크|13.56.94.107/admin/api/vehicle_status/vehicle_condition.php?cr_id=3|
 
 
