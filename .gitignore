@@ -3,4 +3,6 @@
 
 /config/*\
 
+/config/db.php
+
 *.git
