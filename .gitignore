@@ -6,3 +6,5 @@
 /config/db.php
 
 *.git
+
+*/db.php
