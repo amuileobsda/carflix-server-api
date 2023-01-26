@@ -28,7 +28,7 @@ Carflix 서비스의 목표는 다음과 같다.
 
 # 2. 서버파트
 ## carflix-server-api
-carflix-server-api server api문서를 관리하기 위함
+carflix server api문서를 관리하기 위함
 
 |개발자|메일|
 |------|---|
