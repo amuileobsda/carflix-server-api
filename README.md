@@ -1,6 +1,9 @@
 ## carflix-server-api
 carflix-server-api server api문서를 관리하기 위함
-    
+
+|개발자|설명|
+|------|---|
+|`최정길`||    
     
     
 ## 1. ERD
