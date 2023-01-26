@@ -172,7 +172,7 @@ car_registeration로 보내서
 API는 응용 프로그램에서 사용할 수 있도록, 운영 체제나 프로그래밍 언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스를 뜻한다.
 
 ### 3.1. 회원
-|REST|설명|URL|
+|METHOD|설명|URI|
 |------|---|---|
 |`GET`|전체회원 조회|/admin/api/member/read.php|
 |`GET`|특정회원 조회|/admin/api/member/show.php?mb_id=1|
@@ -184,7 +184,7 @@ API는 응용 프로그램에서 사용할 수 있도록, 운영 체제나 프�
 
 
 ### 3.2. 차량
-|REST|설명|URL|
+|METHOD|설명|URI|
 |------|---|---|
 |`GET`|전체차량 조회|/admin/api/car/read.php|
 |`GET`|특정차량 조회|/admin/api/car/show.php?cr_id=1|
@@ -198,7 +198,7 @@ API는 응용 프로그램에서 사용할 수 있도록, 운영 체제나 프�
 
 
 ### 3.3. 소규모그룹
-|REST|설명|URL|
+|METHOD|설명|URI|
 |------|---|---|
 |`GET`|전체 소규모그룹 조회|/admin/api/small_group/read.php|
 |`GET`|특정 소규모그룹 조회|/admin/api/small_group/show.php?sg_id=1|
@@ -209,7 +209,7 @@ API는 응용 프로그램에서 사용할 수 있도록, 운영 체제나 프�
 
 
 ### 3.4. 대규모그룹
-|REST|설명|URL|
+|METHOD|설명|URI|
 |------|---|---|
 |`GET`|전체 대규모그룹 조회|/admin/api/ceo_group/read.php|
 |`GET`|특정 대규모그룹 조회|/admin/api/ceo_group/show.php?cg_id=1|
@@ -220,7 +220,7 @@ API는 응용 프로그램에서 사용할 수 있도록, 운영 체제나 프�
 
 
 ### 3.5. 렌트그룹
-|REST|설명|URL|
+|METHOD|설명|URI|
 |------|---|---|
 |`GET`|전체 렌트그룹 조회|/admin/api/rent_group/read.php|
 |`GET`|특정 렌트그룹 조회|/admin/api/rent_group/show.php?rg_id=1|
@@ -231,7 +231,7 @@ API는 응용 프로그램에서 사용할 수 있도록, 운영 체제나 프�
 
 
 ### 3.6. 초대코드
-|REST|설명|URL|
+|METHOD|설명|URI|
 |------|---|---|
 |`GET`|생성된 전체 초대코드 조회|/admin/api/invite_code/read.php|
 |`GET`|특정 회원이 생성한 전체 초대코드|/admin/api/invite_code/show.php?mb_id=2|
@@ -241,7 +241,7 @@ API는 응용 프로그램에서 사용할 수 있도록, 운영 체제나 프�
 
 
 ### 3.7. 차량상태
-|REST|설명|URL|
+|METHOD|설명|URI|
 |------|---|---|
 |`GET`|특정 차량상태 최신순으로 120개 불러옴|/admin/api/vehicle_status/show.php?cr_id=2|
 |`POST`|시동상태 전송|/admin/api/vehicle_status/boot_status.php|
