@@ -32,7 +32,7 @@ carflix server api문서를 관리하기 위함
 
 |개발자|메일|
 |------|---|
-|`최정길`|legend_gil@naver.com|    
+|`최정길`|dev.ebosda000@gmail.com|    
 
 ## 1. ERD
 
