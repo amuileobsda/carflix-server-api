@@ -78,9 +78,8 @@ API는 응용 프로그램에서 사용할 수 있도록, 운영 체제나 프�
 |`GET`|특정 차량상태 최신순으로 120개 불러옴|/admin/api/vehicle_status/show.php?cr_id=2|
 |`POST`|시동상태 전송|/admin/api/vehicle_status/boot_status.php|
 |`POST`|시동꺼짐 정보전송|/admin/api/vehicle_status/connection_status.php|
-
-
 |`POST`|아두이노에 문제있을때 앱에서 서버로 보내는 상태|/admin/api/code_car/create.php|
 |`GET`|시동요청이 올바른지 체크|/admin/api/vehicle_status/boot_on.php?cr_id=3&mb_id=4|
 |`GET`|차량이 락인지 언락인지 체크|/admin/api/vehicle_status/lockunlock.php?cr_id=3&mb_id=4&how=trunk_lock|
-|`GET`|현재 이차량이 시동가능한지 시동중인지 체크|/admin/api/vehicle_status/vehicle_condition.php?cr_id=3|
+|`GET`|현재 이차량이 시동가능한지 시동중인지 체크|/admin/api/vehicle_status/vehicle_condition.php?cr_id=3|   
+
