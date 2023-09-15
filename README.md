@@ -1,5 +1,5 @@
 # 프로젝트 설명
-## 1. 기획의도
+## 기획의도
 자동차 키가 누구에게 있는지 몰라서 운전을 못 하는 경우가 있다. 
 
 가족뿐만 아니라 직장에서도 간혹가다 생기는 일이다. 
@@ -13,7 +13,7 @@
  시동이 걸려있는 동안 운전자, 위치 정보를 서버에 저장한다면 이를 해결할 수 있다.
 
 
-## 2. 작품 개요
+## 작품 개요
 Carflix 서비스의 목표는 다음과 같다.
 ```
 1) 스마트폰과 블루투스로 통신하며 자동차 키의 기능을 모두 수행할 수 있는 차량 모듈을 설계한다.
@@ -22,12 +22,12 @@ Carflix 서비스의 목표는 다음과 같다.
 4) 그룹의 차량과 회원을 관리하는 웹페이지를 만들고, 권한이 있는 사용자가 이를 이용할 수 있게 한다.
 ```
 
-## 3. 서버 구조도
+## 서버 구조도
 ![그림](https://user-images.githubusercontent.com/30142355/214896441-36187818-5214-479f-8ee7-3e64b66ee4ed.png)
 
 
 
-## 4. ERD
+## ERD
 
 개체-관계 모델. 테이블간의 관계를 설명해주는 다이어그램이라고 볼 수 있으며, 
 
@@ -38,8 +38,8 @@ Carflix 서비스의 목표는 다음과 같다.
 <img width="100%" src="https://user-images.githubusercontent.com/30142355/181522917-6b69d233-ee63-4018-bf6e-4ea3e7c75d6e.png"/>   
 
 <!--
-### 4.1. ERD 상세설명
-### 4.1.1. code_car테이블 설명
+### ERD 상세설명
+### code_car테이블 설명
 
 <details><summary style="color:skyblue">CLICK ME</summary>
 <p>
@@ -60,7 +60,7 @@ car_registeration로 보내서
 </p>
 </details>    
     
-### 4.1.2. vehicle_status 테이블 설명
+### vehicle_status 테이블 설명
 
 <details><summary style="color:skyblue">CLICK ME</summary>
 <p>
@@ -80,20 +80,19 @@ car_registeration로 보내서
 -->
 
 
-## 5. 테이블 구조
+## 테이블 구조
 
 `schema.md` 참조
 
 
 
-## 6. API 문서화
+## API 문서화
 
 `api.md` 참조
 
 
 
 ##
-
 | 개발자 | 메일                    |
 | ------ | ----------------------- |
 | 최정길 | dev.ebosda000@gmail.com  |
