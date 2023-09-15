@@ -37,6 +37,7 @@ Carflix 서비스의 목표는 다음과 같다.
 
 <img width="100%" src="https://user-images.githubusercontent.com/30142355/181522917-6b69d233-ee63-4018-bf6e-4ea3e7c75d6e.png"/>   
 
+<!--
 ### 4.1. ERD 상세설명
 ### 4.1.1. code_car테이블 설명
 
@@ -76,7 +77,7 @@ car_registeration로 보내서
 </p>
 </details>  
 
-
+-->
 
 ## 5. 테이블 구조
 
