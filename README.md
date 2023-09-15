@@ -37,8 +37,8 @@ Carflix 서비스의 목표는 다음과 같다.
 
 <img width="100%" src="https://user-images.githubusercontent.com/30142355/181522917-6b69d233-ee63-4018-bf6e-4ea3e7c75d6e.png"/>   
 
-### 1.1. ERD 상세설명
-### 1.1.1. code_car테이블 설명
+### 4.1. ERD 상세설명
+### 4.1.1. code_car테이블 설명
 
 <details><summary style="color:skyblue">CLICK ME</summary>
 <p>
@@ -59,7 +59,7 @@ car_registeration로 보내서
 </p>
 </details>    
     
-### 1.1.2. vehicle_status 테이블 설명
+### 4.1.2. vehicle_status 테이블 설명
 
 <details><summary style="color:skyblue">CLICK ME</summary>
 <p>
@@ -78,19 +78,19 @@ car_registeration로 보내서
 
 
 
-## 2. 테이블 구조
+## 5. 테이블 구조
 
 관계형 데이터베이스에서 데이터들을 목록별로 정리해서 완성된 하나의 집합체를 테이블이라고 합니다.
 
-schema.md 참조
+`schema.md` 참조
 
 
 
-## 3. API 문서화
+## 6. API 문서화
 
 API는 응용 프로그램에서 사용할 수 있도록, 운영 체제나 프로그래밍 언어가 제공하는 기능을 제어할 수 있게 만든 인터페이스를 뜻한다.
 
-api.md 참조
+`api.md` 참조
 
 
 
