@@ -92,6 +92,16 @@ car_registeration로 보내서
 # 
 
 # 코드설명
+## 사용기술
+- JavaScript
+- TailwindCSS
+- PHP
+- Linux
+- Mysql
+- apache
+- centos
+- AWS-EC2
+
 ## PHP와 OOP를 활용한 RESTful API 개발 단계별 안내
 php7.4이상의 버전을 사용하였으며, 깔끔하게 객체지향 방식을 도입하여 php코드를 짰습니다.
 
